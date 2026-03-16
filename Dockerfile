@@ -19,9 +19,6 @@ RUN ARCH="$(dpkg --print-architecture)" \
 
 # Install pnpm globally
 RUN npm install -g pnpm
-# Option A: Use NodeSource (gets latest 22.x, currently 22.16+)
-RUN curl -fsSL https://deb.nodesource.com/setup_22.x | bash - && \
-    apt-get install -y nodejs
 # Install OpenClaw (formerly clawdbot/moltbot)
 # Pin to specific version for reproducible builds
 RUN npm install -g openclaw@2026.2.3 \
